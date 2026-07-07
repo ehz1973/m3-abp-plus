@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de envío con formulario y tablas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script defer src="assets/js/ejercicio2.js"></script>
+</head>
+
+<body>
+    <main class="container">
+        <h1 class="text-center mt-4 mb-4">Calculadora de envío con formulario y tablas</h1>
+        <h2 class="text-center">Definiciones</h2>
+        <p>Una encomienda puede tener uno o más bultos. El peso de cada bulto es el mayor entre el peso físico y el peso
+            volumétrico, donde éste último se calcula como ancho × largo × alto dividido por un factor volumétrico.</p>
+        <p>La entrada de datos se realiza con formularios HTML y la salida de datos se muestra en tablas HTML dentro de la
+            página.</p>
+
+        <section class="card mb-4">
+            <div class="card-body">
+                <h3 class="card-title">Datos del bulto</h3>
+                <form id="formulario-bulto" class="row g-3">
+                    <div class="col-md-3">
+                        <label for="pesoFisico" class="form-label">Peso físico (kg)</label>
+                        <input type="number" step="0.01" min="0" class="form-control" id="pesoFisico" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="ancho" class="form-label">Ancho (cm)</label>
+                        <input type="number" step="0.1" min="0" class="form-control" id="ancho" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="largo" class="form-label">Largo (cm)</label>
+                        <input type="number" step="0.1" min="0" class="form-control" id="largo" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="alto" class="form-label">Alto (cm)</label>
+                        <input type="number" step="0.1" min="0" class="form-control" id="alto" required>
+                    </div>
+                    <div class="col-12 d-flex gap-2">
+                        <button type="submit" id="boton-agregar" class="btn btn-primary">Agregar bulto</button>
+                        <button type="button" id="boton-calcular" class="btn btn-success">Calcular envío</button>
+                        <button type="button" id="boton-limpiar" class="btn btn-secondary">Limpiar bultos</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="mb-4">
+            <h3>Resumen de bultos</h3>
+            <div id="contenedor-tabla-bultos" class="table-responsive"></div>
+        </section>
+
+        <section class="mb-4">
+            <h3>Valores de envío</h3>
+            <div id="contenedor-tabla-valores" class="table-responsive"></div>
+        </section>
+
+        <section>
+            <p id="mensaje-resumen" class="fw-semibold"></p>
+        </section>
+    </main>
+</body>
+
+</html>
